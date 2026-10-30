@@ -1,0 +1,17 @@
+{
+  "item.plunderlog.plunder_journal": "Plunder Journal",
+  "plunderlog.journal.title": "Plunder Journal",
+  "plunderlog.journal.empty": "No structures cleared yet.",
+  "plunderlog.journal.hint": "Empty a structure's chests, or defeat its boss.",
+  "plunderlog.journal.count": "%s cleared",
+  "plunderlog.journal.waypoints": "Add Map Marks",
+  "plunderlog.message.cleared": "Cleared %s in %s at %s, %s, %s (%s).",
+  "plunderlog.reason.chests": "chests emptied",
+  "plunderlog.reason.boss": "boss slain",
+  "plunderlog.xaero.added": "Map marks updated (%s).",
+  "plunderlog.xaero.missing": "Xaero's Minimap waypoint API was not found. The journal still works.",
+  "plunderlog.configuration.clearMode": "What Counts as Cleared",
+  "plunderlog.configuration.clearMode.tooltip": "CHESTS, BOSSES, or BOTH. Chests require every structure piece chunk to be loaded.",
+  "plunderlog.configuration.chestRange": "Chest Range",
+  "plunderlog.configuration.chestRange.tooltip": "How many blocks outside a structure piece a loot container may be and still count."
+}
