@@ -1,0 +1,27 @@
+name: Add Gradle wrapper jar
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  wrapper:
+    if: hashFiles('gradle/wrapper/gradle-wrapper.jar') == ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Commit the Gradle wrapper jar
+        run: |
+          set -eu
+          curl -fsSL -o gradle/wrapper/gradle-wrapper.jar \
+            https://raw.githubusercontent.com/NeoForgeMDKs/MDK-1.21.1-ModDevGradle/e93d7f09d4eec12c76d1d7be9bf4eaad0246e9e0/gradle/wrapper/gradle-wrapper.jar
+          echo '7d3a4ac4de1c32b59bc6a4eb8ecb8e612ccd0cf1ae1e99f66902da64df296172  gradle/wrapper/gradle-wrapper.jar' | sha256sum -c -
+          git config user.name "azrieselman"
+          git config user.email "azrieselman@gmail.com"
+          git add --chmod=+x gradlew
+          git add gradle/wrapper/gradle-wrapper.jar
+          git commit -m "Add the Gradle wrapper jar."
+          git push
